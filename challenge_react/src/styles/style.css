@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
 .wordtopright {
   padding-top: 20px;
 }
@@ -7,17 +7,17 @@
   text-decoration: none;
 }
 .wordtopright li {
-  font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
   font-size: 14px;
   font-weight: 300;
-  color: #19345E;
+  color: #19345e;
   display: inline;
   padding-right: 20px;
   text-align: right;
 }
 .wordtopright li:hover {
-  color: #F47522;
-  font-family: 'Muli', sans-serif;
+  color: #f47522;
+  font-family: "Muli", sans-serif;
   font-weight: bold;
 }
 .toppage {
@@ -32,25 +32,25 @@
   display: none;
 }
 .aboutme {
-  background-color: #F4F7FC;
+  background-color: #f4f7fc;
   height: 132px;
 }
 .aboutme .background2 h2 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 40px;
-  color: #19345E;
+  color: #19345e;
 }
 .SettingRow3 {
   margin-top: 50px;
   margin-bottom: 30px;
 }
 .SettingRow3 .content-paragraph p {
-  font-family: 'Roboto', sans-serif;
-  color: #19345E;
+  font-family: "Roboto", sans-serif;
+  color: #19345e;
 }
 .SettingRow3 .content-paragraph .table td {
   text-align: center;
-  color: #19345E;
+  color: #19345e;
   /* posisi teks */
 }
 .SettingRow3 .imagePicture .image1 {
@@ -72,7 +72,7 @@
   position: absolute;
 }
 .alterrabawah {
-  background-color: #19345E;
+  background-color: #19345e;
 }
 .alterrabawah .AlterraBawah {
   background-position: 0px;
@@ -86,7 +86,7 @@
 }
 .alterrabawah .vl {
   margin-top: 10px;
-  border-right: 2px solid #19345E;
+  border-right: 2px solid #19345e;
   height: 110px;
 }
 .alterrabawah .vl .socialmedia p {
@@ -121,9 +121,9 @@
     text-align: right;
   }
   .aboutme .background2 h2 {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 30px;
-    color: #19345E;
+    color: #19345e;
   }
   .imagePicture .image1 {
     /* width: 249px; */
@@ -153,7 +153,7 @@
     text-align: center;
   }
   footer {
-    background-color: #19345E;
+    background-color: #19345e;
   }
   .mobile {
     display: block;
@@ -179,7 +179,7 @@
     position: relative;
   }
   .topnav .responsive a {
-    font-family: 'Muli', sans-serif;
+    font-family: "Muli", sans-serif;
     float: none;
     display: block;
     text-align: right;
@@ -191,20 +191,20 @@
     top: 0;
   }
   .wordtopright a li:hover {
-    color: #F47522;
-    font-family: 'Muli', sans-serif;
+    color: #f47522;
+    font-family: "Muli", sans-serif;
     font-weight: bold;
   }
 }
 .body {
-  background-image: url("img/bg-img.png");
+  background-image: url("../img/bg-img.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
 header {
   background-color: #ffffff;
   padding: 5px;
-  font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
   margin: 0;
 }
 .header-nav .page-now {
@@ -212,8 +212,8 @@ header {
 }
 .header-nav a {
   padding: 15px;
-  color: #19345E;
-  font-family: 'Muli', sans-serif;
+  color: #19345e;
+  font-family: "Muli", sans-serif;
   font-weight: 400;
   text-decoration: none;
   font-size: 13px;
@@ -228,8 +228,8 @@ header {
   padding: 45px;
   margin-top: 70px;
 }
-.btn {
-  font-family: 'Roboto', sans-serif;
+.button {
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 16px;
   color: #ffffff;
@@ -242,22 +242,22 @@ header {
   margin-top: 160px;
 }
 .introduce h5 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: medium;
   font-size: 25px;
-  color: #19345E;
+  color: #19345e;
 }
 .introduce h1 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: bold;
   font-size: 85px;
-  color: #19345E;
+  color: #19345e;
 }
 .introduce h3 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: medium;
   font-size: 35px;
-  color: #19345E;
+  color: #19345e;
 }
 @media (max-width: 991px) {
   .header-nav a {
@@ -315,7 +315,7 @@ header {
   }
 }
 .background-image {
-  background-image: url("img/charles-rRWiVQzLm7k-unsplash.jpg");
+  background-image: url("../img/charles-rRWiVQzLm7k-unsplash.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   width: 512px;
@@ -331,14 +331,14 @@ header {
   margin: 350px 150px;
 }
 .contact {
-  font-family: 'Muli', sans-serif;
-  color: #19345E;
+  font-family: "Muli", sans-serif;
+  color: #19345e;
   font-size: 20px;
   margin: 60px 130px;
 }
 .contact h3 {
-  font-family: 'Muli', sans-serif;
-  color: #19345E;
+  font-family: "Muli", sans-serif;
+  color: #19345e;
   font-size: 23px;
 }
 .contact .form-layout {
@@ -350,7 +350,7 @@ header {
 }
 .contact .nationality-layout {
   -webkit-appearance: none;
-  background-image: url("img/down-arrow.png");
+  background-image: url("../img/down-arrow.png");
   background-size: 22px;
   background-repeat: no-repeat;
   background-position: 95% center;
@@ -371,7 +371,7 @@ header {
   color: #ff0000;
 }
 .contact .btn {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 16px;
   color: #ffffff;
