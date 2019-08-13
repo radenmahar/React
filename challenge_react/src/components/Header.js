@@ -1,5 +1,6 @@
 import React from "react";
 import header_logo from "../img/logo-ALTA@2x.png";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "../styles/style.css";
 
 class Header extends React.Component {
@@ -19,21 +20,22 @@ class Header extends React.Component {
               <div className="col-md-8 topnav" id="myTopnav">
                 <div className="text-right wordtopright">
                   <ul>
-                    <a href="#">
-                      <li>HOME</li>
-                    </a>
-                    <a href="#">
-                      <li className="pageSekarang">ABOUT</li>
-                    </a>
-                    <a href="#">
+                    <li>
+                      <Link to="/">Home</Link>
+                    </li>
+
+                    <li className="pageSekarang">
+                      <Link to="/About">ABOUT</Link>
+                    </li>
+                    <Link to="#">
                       <li>EXPERIENCE</li>
-                    </a>
-                    <a href="#">
+                    </Link>
+                    <Link to="/Contact">
                       <li>CONTACT</li>
-                    </a>
-                    <a href="#" className="icon" onclick="myFunction()">
+                    </Link>
+                    <Link to="#" className="icon" onclick="myFunction()">
                       <i className="fa fa-bars" />
-                    </a>
+                    </Link>
                   </ul>
                 </div>
               </div>

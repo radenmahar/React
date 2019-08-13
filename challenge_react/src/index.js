@@ -5,9 +5,11 @@ import About from "./pages/About";
 import News from "./pages/ListNews";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
+import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
-ReactDOM.render(<News />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

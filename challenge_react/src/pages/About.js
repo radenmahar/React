@@ -1,13 +1,12 @@
 import React from "react";
-import Header from "../components/HeaderNews";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Body from "../components/BodyAbout";
+import BodyAbout from "../components/BodyAbout";
 
 function About() {
   return (
     <div>
-      <Header />
-      <Body />
+      <BodyAbout />
       <Footer />
     </div>
   );

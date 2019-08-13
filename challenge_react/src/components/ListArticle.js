@@ -1,29 +1,34 @@
 import React from "react";
 import axios from "axios";
+import Header from "./HeaderNews";
 
 class List extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      data: this.props.data
     };
   }
-  componentDidMount = () => {
-    axios
-      .get(
-        "https://newsapi.org/v2/everything?q=bitcoin&from=2019-07-13&sortBy=publishedAt&apiKey=a6d1d3afdea84c939e029a436a696b0a"
-      )
-      .then(response => {
-        this.setState({ data: response.data.articles });
-        console.log(response);
-        console.log(this.state.data);
-      })
-      .catch(error => {
-        console.log("terdapat eror ini :", error);
-      });
-  };
+  // componentDidMount = () => {
+  //   console.log(this.state.keyword);
+  //   axios
+  //     .get(
+  //       "https://newsapi.org/v2/everything?q=" +
+  //         this.state.keyword +
+  //         "&from=2019-07-13&sortBy=publishedAt&apiKey=a6d1d3afdea84c939e029a436a696b0a"
+  //     )
+  //     .then(response => {
+  //       this.setState({ data: response.data.articles });
+  //       console.log(response);
+  //       console.log(this.state.data);
+  //     })
+  //     .catch(error => {
+  //       console.log("terdapat eror ini :", error);
+  //     });
+  // };
 
   render() {
+    // console.log(this.props.data);
     return (
       <div>
         <div className="list-group">
@@ -35,7 +40,7 @@ class List extends React.Component {
               <small className="text-primary">Lihat Semua</small>
             </div>
           </a>
-          {this.state.data.map((value, index) => {
+          {this.props.data.map((value, index) => {
             if (index < 4) {
               return (
                 <a

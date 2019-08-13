@@ -10,22 +10,8 @@ class Toparticle extends React.Component {
     };
   }
 
-  componentDidMount = () => {
-    axios
-      .get(
-        "https://newsapi.org/v2/everything?q=bitcoin&from=2019-07-13&sortBy=publishedAt&apiKey=a6d1d3afdea84c939e029a436a696b0a"
-      )
-      .then(response => {
-        this.setState({ data: response.data.articles });
-        console.log(response);
-      })
-      .catch(error => {
-        console.log("ini error disini :", error);
-      });
-  };
-
   description() {
-    let temp = this.state.data.map((value, index) => {
+    let temp = this.props.data.map((value, index) => {
       if (index === 0) {
         var description = "";
         let b = 50;
@@ -46,10 +32,10 @@ class Toparticle extends React.Component {
   render() {
     return (
       <div>
-        {this.state.data.map((value, index) => {
+        {this.props.data.map((value, index) => {
           if (index === 0) {
             return (
-              <div className="card mb-3">
+              <div className="card mb-3" key={index}>
                 <img
                   src={value.urlToImage}
                   className="card-img-top"
