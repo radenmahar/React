@@ -30,7 +30,7 @@ class Header extends React.Component {
                   <ul className="navbar-nav">
                     <li className="nav-item active">
                       <a className="nav-link" href="#">
-                        Beranda <span class="sr-only">(current)</span>
+                        Beranda <span className="sr-only">(current)</span>
                       </a>
                     </li>
                     <li className="nav-item">
@@ -106,7 +106,7 @@ class Header extends React.Component {
                   <ul className="navbar-nav">
                     <li className="nav-item active">
                       <a className="nav-link" href="#">
-                        Masuk <span class="sr-only">(current)</span>
+                        Masuk <span className="sr-only">(current)</span>
                       </a>
                     </li>
                     <li className="nav-item">

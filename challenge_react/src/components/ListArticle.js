@@ -1,6 +1,28 @@
 import React from "react";
+import axios from "axios";
 
 class List extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: []
+    };
+  }
+  componentDidMount = () => {
+    axios
+      .get(
+        "https://newsapi.org/v2/everything?q=bitcoin&from=2019-07-13&sortBy=publishedAt&apiKey=a6d1d3afdea84c939e029a436a696b0a"
+      )
+      .then(response => {
+        this.setState({ data: response.data.articles });
+        console.log(response);
+        console.log(this.state.data);
+      })
+      .catch(error => {
+        console.log("terdapat eror ini :", error);
+      });
+  };
+
   render() {
     return (
       <div>
@@ -13,38 +35,27 @@ class List extends React.Component {
               <small className="text-primary">Lihat Semua</small>
             </div>
           </a>
-          <a href="#" className="list-group-item list-group-item-action">
-            <div className="d-flex w-100 justify-content-between">
-              <h6 className="mb-1 text-danger">#1</h6>
-              <small className="text-muted">3 Hari lalu</small>
-            </div>
-            <p className="mb-1">
-              <strong>
-                Kemenangan atas Chelsea, Hadiah bagi United yang Berani Ambil
-                Risiko.
-              </strong>
-            </p>
-          </a>
-          <a href="#" className="list-group-item list-group-item-action">
-            <div className="d-flex w-100 justify-content-between">
-              <h6 className="mb-1 text-danger">#2</h6>
-              <small className="text-muted">2 Jam lalu</small>
-            </div>
-            <p className="mb-1">
-              <strong>21 Menit yang Lumpuhkan Ibu Kota</strong>
-            </p>
-          </a>
-          <a href="#" className="list-group-item list-group-item-action">
-            <div className="d-flex w-100 justify-content-between">
-              <h6 className="mb-1 text-danger">#3</h6>
-              <small className="text-muted">1 hari lalu</small>
-            </div>
-            <p className="mb-1">
-              <strong>
-                Penjelasan Calon Istri soal Idul Adha Pertama Deddy Corbuzier
-              </strong>
-            </p>
-          </a>
+          {this.state.data.map((value, index) => {
+            if (index < 4) {
+              return (
+                <a
+                  href={value.url}
+                  className="list-group-item list-group-item-action"
+                  key={index}
+                >
+                  <div className="d-flex w-100 justify-content-between">
+                    <h6 className="mb-1 text-danger">#{index + 1}</h6>
+                    <small className="text-muted">
+                      {value.publishedAt.slice(0, 10)}
+                    </small>
+                  </div>
+                  <p className="mb-1">
+                    <strong>{value.title}</strong>
+                  </p>
+                </a>
+              );
+            }
+          })}
         </div>
       </div>
     );
