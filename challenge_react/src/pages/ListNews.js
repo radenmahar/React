@@ -3,6 +3,7 @@ import Header from "../components/HeaderNews";
 import List from "../components/ListArticle";
 import Toparticle from "../components/TopArticle";
 import axios from "axios";
+import { Redirect } from "react-router-dom";
 
 class News extends React.Component {
   constructor(props) {
@@ -13,6 +14,11 @@ class News extends React.Component {
     };
   }
 
+  handleSignOut = () => {
+    localStorage.removeItem("is_login");
+    this.props.history.push("/default");
+  };
+
   handleChange = event => {
     event.preventDefault();
     this.setState({ keyword: event.target.value }, () => {
@@ -20,7 +26,7 @@ class News extends React.Component {
         .get(
           "https://newsapi.org/v2/everything?q=" +
             this.state.keyword +
-            "&from=2019-07-13&sortBy=publishedAt&apiKey=3b2f07d9271042bdae12b91298a27218"
+            "&from=2019-08-14&sortBy=publishedAt&apiKey=1590e425439643439774a03fafdc7f06"
         )
         .then(response => {
           this.setState({ value: response.data.articles });
@@ -38,7 +44,7 @@ class News extends React.Component {
       .get(
         "https://newsapi.org/v2/everything?q=" +
           this.props.value +
-          "&from=2019-07-13&sortBy=publishedAt&apiKey=3b2f07d9271042bdae12b91298a27218"
+          "&from=2019-08-14&sortBy=publishedAt&apiKey=1590e425439643439774a03fafdc7f06"
       )
       .then(response => {
         this.setState({ value: response.data.articles });
@@ -56,7 +62,7 @@ class News extends React.Component {
         .get(
           "https://newsapi.org/v2/everything?q=" +
             this.props.value +
-            "&from=2019-07-13&sortBy=publishedAt&apiKey=3b2f07d9271042bdae12b91298a27218"
+            "&from=2019-08-14&sortBy=publishedAt&apiKey=1590e425439643439774a03fafdc7f06"
         )
         .then(response => {
           this.setState({ value: response.data.articles });
@@ -70,22 +76,30 @@ class News extends React.Component {
   };
 
   render() {
-    console.log(this.state.keyword);
-    return (
-      <div>
-        <Header handle={this.handleChange} />
-        <div className="container">
-          <div className="row mt-3">
-            <div className="col-md-3">
-              <List data={this.state.value} />
-            </div>
-            <div className="col-md-9">
-              <Toparticle data={this.state.value} />
+    const is_login = JSON.parse(localStorage.getItem("is_login"));
+    if (is_login === null) {
+      return <Redirect to={{ pathname: "/masuk" }} />;
+    } else {
+      console.log(this.state.keyword);
+      return (
+        <div>
+          <Header
+            handle={this.handleChange}
+            handleSignOut={this.handleSignOut}
+          />
+          <div className="container">
+            <div className="row mt-3">
+              <div className="col-md-3">
+                <List data={this.state.value} />
+              </div>
+              <div className="col-md-9">
+                <Toparticle data={this.state.value} />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }
 

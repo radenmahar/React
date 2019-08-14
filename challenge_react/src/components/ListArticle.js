@@ -9,23 +9,6 @@ class List extends React.Component {
       data: this.props.data
     };
   }
-  // componentDidMount = () => {
-  //   console.log(this.state.keyword);
-  //   axios
-  //     .get(
-  //       "https://newsapi.org/v2/everything?q=" +
-  //         this.state.keyword +
-  //         "&from=2019-07-13&sortBy=publishedAt&apiKey=a6d1d3afdea84c939e029a436a696b0a"
-  //     )
-  //     .then(response => {
-  //       this.setState({ data: response.data.articles });
-  //       console.log(response);
-  //       console.log(this.state.data);
-  //     })
-  //     .catch(error => {
-  //       console.log("terdapat eror ini :", error);
-  //     });
-  // };
 
   render() {
     // console.log(this.props.data);
