@@ -1,14 +1,16 @@
 import React from "react";
 import Header from "../components/HeaderNews";
 import { Redirect } from "react-router-dom";
+import { connect } from "unistore/react";
+import { actions } from "../initial/Initial";
 
 const Profile = props => {
-  const is_login = JSON.parse(localStorage.getItem("is_login"));
-  const email = localStorage.getItem("email");
-  const name = localStorage.getItem("name");
-  console.log("is_login", is_login);
+  // const is_login = JSON.parse(localStorage.getItem("is_login"));
+  // const email = localStorage.getItem("email");
+  // const name = localStorage.getItem("name");
+  // console.log("is_login", is_login);
 
-  if (is_login === null) {
+  if (props.is_login === false) {
     return <Redirect to={{ pathname: "/masuk" }} />;
   } else {
     return (
@@ -24,8 +26,8 @@ const Profile = props => {
           </div>
           <div class="row mt-4 justify-content-center">
             <div class="col-md-8 text-center">
-              <h3>Name : {name}</h3>
-              <h3>Email : {email}</h3>
+              <h3>Name : {props.name}</h3>
+              <h3>Email : {props.email}</h3>
             </div>
           </div>
         </div>
@@ -34,7 +36,11 @@ const Profile = props => {
   }
 };
 
-export default Profile;
+export default connect(
+  "email, name, is_login",
+  actions
+)(Profile);
+
 //
 {
   /* <p className="card-text">name : {name}</p>

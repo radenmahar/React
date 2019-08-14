@@ -45,7 +45,7 @@ function Header(props) {
                       aria-haspopup="true"
                       aria-expanded="false"
                     >
-                      Lainnya
+                      Kategori
                     </a>
                     <div
                       className="dropdown-menu"

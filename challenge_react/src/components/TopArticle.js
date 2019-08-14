@@ -1,6 +1,6 @@
 import React from "react";
-import Chelsea from "../img/Chelsea.png";
-import axios from "axios";
+import { actions } from "../initial/Initial";
+import { connect } from "unistore/react";
 
 class Toparticle extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class Toparticle extends React.Component {
   }
 
   description() {
-    let temp = this.props.data.map((value, index) => {
+    let temp = this.props.values.map((value, index) => {
       if (index === 0) {
         var description = "";
         let b = 50;
@@ -32,7 +32,7 @@ class Toparticle extends React.Component {
   render() {
     return (
       <div>
-        {this.props.data.map((value, index) => {
+        {this.props.values.map((value, index) => {
           if (index === 0) {
             return (
               <div className="card mb-3" key={index}>
@@ -89,4 +89,7 @@ class Toparticle extends React.Component {
   }
 }
 
-export default Toparticle;
+export default connect(
+  "values",
+  actions
+)(Toparticle);

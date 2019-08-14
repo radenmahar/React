@@ -1,9 +1,8 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import MainRoutes from "./main_routes/MainRoutes";
-import Header from "./components/Header";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+// import { Provider } from "unistore/react";
+// import { store } from "./initial/Initial";
 
 function App() {
   return (

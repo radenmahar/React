@@ -1,12 +1,16 @@
 import React from "react";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
+import { connect } from "unistore/react";
+import { actions } from "../initial/Initial";
 
 class SignIn extends React.Component {
-  // constructor(props) {
-  //   super(props);
+  constructor(props) {
+    super(props);
+    // this.props.setLogin = this.props.setLogin.bind(this);
+  }
+
   state = { Email: "", password: "" };
-  // }
 
   changeInput = event => {
     this.setState({ [event.target.name]: event.target.value });
@@ -17,15 +21,16 @@ class SignIn extends React.Component {
       username: username,
       password: password
     };
+
     axios
-      .post("https://myendpoint.free.beeceptor.com/signin", mydata)
+      .post("https://point.free.beeceptor.com/sign", mydata)
       .then(response => {
         console.log(response.data);
+        console.log(this.props.is_login);
         if (response.data.hasOwnProperty("status")) {
-          localStorage.setItem("api_key", response.data.api_key);
-          localStorage.setItem("is_login", response.data.status);
-          localStorage.setItem("email", response.data.email);
-          localStorage.setItem("name", response.data.name);
+          this.props.setLogin(true);
+          this.props.setEmail(this.state.Email);
+          this.props.setName(this.state.password);
           this.props.history.push("/news");
         }
       })
@@ -35,6 +40,7 @@ class SignIn extends React.Component {
   };
 
   render() {
+    console.log("ini props", this.props);
     console.log("is_login");
     console.log("state", this.state);
     return (
@@ -46,6 +52,7 @@ class SignIn extends React.Component {
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
                   <input
+                    required
                     type="email"
                     class="form-control"
                     name="Email"
@@ -95,4 +102,7 @@ class SignIn extends React.Component {
   }
 }
 
-export default withRouter(SignIn);
+export default connect(
+  "email, name, is_login",
+  actions
+)(withRouter(SignIn));

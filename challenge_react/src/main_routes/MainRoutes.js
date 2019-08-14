@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import News from "../pages/ListNews";
+import News from "../pages/Article";
 import Category from "../pages/Category";
 import SignIn from "../pages/Singin";
 import Profile from "../pages/Profile";

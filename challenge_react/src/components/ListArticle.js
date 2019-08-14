@@ -1,13 +1,15 @@
 import React from "react";
 import axios from "axios";
 import Header from "./HeaderNews";
+import { actions } from "../initial/Initial";
+import { connect } from "unistore/react";
 
 class List extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      data: this.props.data
-    };
+    // this.state = {
+    //   data: this.props.data
+    // };
   }
 
   render() {
@@ -23,7 +25,7 @@ class List extends React.Component {
               <small className="text-primary">Lihat Semua</small>
             </div>
           </a>
-          {this.props.data.map((value, index) => {
+          {this.props.values.map((value, index) => {
             if (index < 4) {
               return (
                 <a
@@ -50,4 +52,7 @@ class List extends React.Component {
   }
 }
 
-export default List;
+export default connect(
+  "values",
+  actions
+)(List);
